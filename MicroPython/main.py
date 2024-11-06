@@ -1,10 +1,10 @@
 """
-Created by: Mr. Coxall
-Created on: Sep 2020
-This module is a Micro:bit MicroPython program
+Created by: Emre Guzel
+Created on: Nov 5 2024
+This module is a Micro:bit MicroPython program This program moves pixels
 """
 
 from microbit import *
 
-
-display.scroll("Hello, World!")
+display.clear()
+display.show(Image.HAPPY)
