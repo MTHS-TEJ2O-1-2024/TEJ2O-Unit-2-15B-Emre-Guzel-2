@@ -4,7 +4,7 @@ Created on: Nov 5 2024
 This module is a Micro:bit MicroPython program This program moves pixels
 """
 
-# Liyberies 
+# Liyberies
 from microbit import *
 import game
 import sprite
@@ -26,3 +26,4 @@ while True:
         # Reseting the loopTrun
         loopTurn = 0
         sprite.set(LedSpriteProperty.X, 0)
+        sleep(500)
