@@ -7,9 +7,8 @@
 
 // Setting the varibels
 let sprite: game.LedSprite = null
-//let loopCounter = 0
-let xcnt = 0
-let ycnt = 0
+let loopMove = 0
+let loopTrun = 0
 
 // Setting the screen
 basic.clearScreen()
@@ -19,21 +18,22 @@ basic.showIcon(IconNames.Happy)
 input.onButtonPressed(Button.A, function () {
     basic.clearScreen()
     sprite = game.createSprite(0, 0)
-    let cntTurn = 0;
+    let loopTrun = 0;
     //blink on the first led
     sprite.set(LedSpriteProperty.X, 0)
     basic.pause(500)
+
     //loop for turn
-    while (cntTurn < 4) {
-        let cntMove = 0;
+    while (loopTrun < 4) {
+        let loopMove = 0;
         //loop for move
-        while (cntMove < 5) {
+        while (loopMove < 5) {
             sprite.move(1)
-            cntMove++;
+            loopMove++;
             basic.pause(500)
         }
         sprite.turn(Direction.Right, 90)
-        cntTurn++
+        loopTrun++
     }
     sprite.delete()
     basic.showIcon(IconNames.Happy)
