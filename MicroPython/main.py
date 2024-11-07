@@ -4,7 +4,7 @@ Created on: Nov 5 2024
 This module is a Micro:bit MicroPython program This program moves pixels
 """
 
-# Librarie
+# Librairie
 from microbit import *
 
 # Setting the variables
@@ -20,20 +20,33 @@ display.show(Image.HAPPY)
 while True:
     if button_a.is_pressed():
         display.clear()
-        # It allows the progam to move horizantely
-        x = (x + 1) % 5
         # Reseting the loopTrun
         loopTurn = 0
         # Setting the pixels of microbit
-        display.set_pixel(x, y, 0)
-        sleep(500)
 
         # Setting the loop for turn
         while loopTurn < 4:
+            display.clear
+            display.set_pixel(x, y, 9)
+            sleep(500)
             # Reseting the loopMove
             loopMove = 0
             # Setting the MoveLopp that way the pixels start to move
-            while loopMove < 5:
-                display.move(1)
-                loopMove +=1
+            while loopMove < 4:
+                # Set direction
+                if loopTurn == 0:  # Move right
+                    x = (x + 1) % 5
+                elif loopTurn == 1:  # Move down
+                    y = (y + 1) % 5
+                elif loopTurn == 2:  # Move left
+                    x = (x - 1) % 5
+                elif loopTurn == 3:  # Move up
+                    y = (y - 1) % 5
+                display.clear()
+                # Move
+                display.set_pixel(x, y, 9)
+                loopMove += 1
                 sleep(500)
+            loopTurn += 1
+        display.clear
+        display.show(Image.HAPPY)
