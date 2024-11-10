@@ -37,7 +37,7 @@ while True:
                 if loopTurn == 0:  # Move right
                     x += 1
                 elif loopTurn == 1:  # Move down
-                    y += 1 
+                    y += 1
                 elif loopTurn == 2:  # Move left
                     x -= 1
                 elif loopTurn == 3:  # Move up
