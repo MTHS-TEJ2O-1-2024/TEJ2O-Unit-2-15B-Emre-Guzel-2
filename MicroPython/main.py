@@ -35,13 +35,13 @@ while True:
             while loopMove < 4:
                 # Set direction
                 if loopTurn == 0:  # Move right
-                    x = (x + 1) % 5
+                    x += 1
                 elif loopTurn == 1:  # Move down
-                    y = (y + 1) % 5
+                    y += 1 
                 elif loopTurn == 2:  # Move left
-                    x = (x - 1) % 5
+                    x -= 1
                 elif loopTurn == 3:  # Move up
-                    y = (y - 1) % 5
+                    y -= 1
                 display.clear()
                 # Move
                 display.set_pixel(x, y, 9)
